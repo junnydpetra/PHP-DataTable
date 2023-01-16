@@ -12,7 +12,7 @@
     <body>
         <h1>Lista de Usuários</h1>
      
-        <table id="usersList" class="display" style="width:100%">
+        <table id="users_list" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>Registro</th>
@@ -27,11 +27,11 @@
         <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
         <script>
-            $(document).ready(function () {
-                $('#usersList').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    ajax: 'users_list.php',
+            $(document).ready(function() {
+                $('#users_list').DataTable({
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": 'users_list.php',
                 });
             });
         </script>

@@ -8,7 +8,7 @@ $port = "3306";
 
 try {
     $connector = new PDO("mysql:host=$host;dbname=" . $dbname, $user, $pass);
-    echo "Conexão estabelecida!";
-} catch (\PDOExcepetion $err) {
-    //throw $th;
+    //echo "Conexão estabelecida!";
+} catch (PDOException $err) {
+
 }
