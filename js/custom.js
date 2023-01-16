@@ -35,7 +35,7 @@ if (formNewUser)
             formNewUser.reset();
             cadModalClose.hide();
             listDataTables = $('#users_list').DataTable();
-            listDataTables.draw();
+            listDataTables.drawf();
         } else {
             document.getElementById("msgAlertCadError").innerHTML = response['msg'];
         }
