@@ -31,6 +31,7 @@
                         <th>Nome</th>
                         <th>Salário</th>
                         <th>Idade</th>
+                        <th>Opções</th>
                     </tr>
                 </thead>
             </table> 
@@ -77,6 +78,80 @@
                             <button type="submit" class="btn btn-sm btn-outline-success float-end" 
                                     value="Enviar">Enviar</button>
                         </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="toViewUser" tabindex="-1" aria-labelledby="toViewUserLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center p-2 pb-0">
+                        <h1 class="text-center fs-5" id="toViewUserLabel">Informações de Usuário</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <dl class="row">
+                            <dt class="col-sm-3">ID:</dt>
+                            <dd class="col-sm-9"><span id="userID"></span></dd>
+                            
+                            <dt class="col-sm-3">Nome:</dt>
+                            <dd class="col-sm-9"><span id="userName"></span></dd>
+                            
+                            <dt class="col-sm-3">Salário:</dt>
+                            <dd class="col-sm-9"><span id="userWage"></span></dd>
+                            
+                            <dt class="col-sm-3">Idade:</dt>
+                            <dd class="col-sm-9"><span id="userAge"></span></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUserLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-between align-items-center p-2 pb-0">
+                        <h1 class="text-center fs-5" id="editUserLabel">Informações de Usuário</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <span id="msgAlertEditError"></span>
+
+                        <form method="POST" id="formEditUsuario">
+
+                            <input type="text" name="id" class="form-control" id="idEdit">
+                        
+                            <div class="row mb-3">
+                                <label for="nome" class="col-sm-2 col-form-label"><b>Nome</b>:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="nome" class="form-control" id="nomeEdit"
+                                           placeholder="Nome completo" value="Nome">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="salario" class="col-sm-2 col-form-label"><b>Salário</b>:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="salario" class="form-control" id="salarioEdit"
+                                        placeholder="Informe o salário" value="">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="idade" class="col-sm-2 col-form-label"><b>Idade</b>:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" name="idade" class="form-control" id="idadeEdit"
+                                        placeholder="Informe a idade" value="">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-outline-primary float-end" 
+                                    value="Salvar">Salvar</button>
+                        </form> 
+                        
                     </div>
                 </div>
             </div>

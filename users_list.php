@@ -79,6 +79,12 @@ while ($row_user = $result_users->fetch(PDO::FETCH_ASSOC))
     $registro[] = $nome;
     $registro[] = $salario . " " . $dados_requisicao['order'][0]['dir'];
     $registro[] = $idade;
+    $registro[] = "<button type='button' class='btn btn-sm btn-outline-secondary' id='$id' 
+                    onclick='registryDetails($id)'>Visualizar</button>
+                   <button type='button' class='btn btn-sm btn-outline-primary' id='$id' 
+                    onclick='editDetails($id)'> Editar </button>
+                   <button type='button' class='btn btn-sm btn-outline-danger' id='$id' 
+                    onclick='deleteDetails($id)'> Excluir </button>";
     $dados[] = $registro;    
 }
 
