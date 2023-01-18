@@ -38,7 +38,7 @@ $result_qnt_usuarios->execute();
 $row_qnt_usuarios = $result_qnt_usuarios->fetch(PDO::FETCH_ASSOC);
  
 $query_users = "SELECT id, nome, salario, idade 
-                FROM users ";
+                FROM users";
 
 //Verificar os parâmetros de pesquisa 
 if (!empty($dados_requisicao['search']['value'])) 

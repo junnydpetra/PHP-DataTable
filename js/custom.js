@@ -34,7 +34,7 @@ if (formNewUser)
             formNewUser.reset();
             cadModalClose.hide();
             listDataTables = $('#users_list').DataTable();
-            listDataTables.drawf();
+            listDataTables.draw();
 
             document.getElementById("msgAlertCadError").innerHTML = "";
         } else {
@@ -64,8 +64,6 @@ async function registryDetails(id)
 
 }
 
-// const editDetailsModal = new bootstrap.Modal(document.getElementById("editUser"));
-
 const editUserModal = new bootstrap.Modal(document.getElementById("editUser"));
 
 async function editDetails(id)
@@ -76,7 +74,7 @@ async function editDetails(id)
     if(response['status'])
     {
         document.getElementById("msgAlertEditError").innerHTML = "";
-        
+
         document.getElementById("msgAlertCadSuccess").innerHTML = "";
         editUserModal.show();
 
@@ -106,7 +104,17 @@ if (editUserForm)
 
         if(response['status'])
         {
+            //Fechar janela
+            document.getElementById("msgAlertCadSuccess").innerHTML = response['msg'];
             document.getElementById("msgAlertEditError").innerHTML = response['msg'];
+
+            //Limpar formulário
+            editUserForm.reset();
+            editUserModal.hide();
+
+            //Atualizar lista de registros
+            listDataTables = $('#users_list').DataTable();
+            listDataTables.draw();
         } else {
             document.getElementById("msgAlertEditError").innerHTML = response['msg'];
         }
@@ -115,5 +123,23 @@ if (editUserForm)
 
 async function deleteDetails(id)
 {
-    console.log("Excluir usuário ID " + id);
+    var confirmation = confirm("Você tem certeza que deseja excluir o registro do usuário?");
+
+    if (confirmation) 
+    {
+        const dados = await fetch("deleteDetails.php?id=" + id);
+        const response = await dados.json();
+        
+        console.log(response);
+        
+        if (response['status']) 
+        {
+            document.getElementById("msgAlertCadSuccess").innerHTML = response['msg'];
+            
+            listDataTables = $('#users_list').DataTable();
+            listDataTables.draw();
+        } else {
+            document.getElementById("msgAlertCadSuccess").innerHTML = response['msg'];
+        }
+    }
 }

@@ -122,7 +122,7 @@
 
                         <form method="POST" id="formEditUsuario">
 
-                            <input type="text" name="id" class="form-control" id="idEdit">
+                            <input type="hidden" name="id" class="form-control" id="idEdit">
                         
                             <div class="row mb-3">
                                 <label for="nome" class="col-sm-2 col-form-label"><b>Nome</b>:</label>
